@@ -31,8 +31,14 @@ document.addEventListener('keydown', (event) => {
   });
   
   document.addEventListener('keyup', (event) => {
-    direction = null;
-    console.log(direction)
+    const key = event.key;
+    if(key === "z" && direction === "up" 
+        || key === "s" && direction === "down"
+        || key === "q" && direction === "left"
+        || key === "d" && direction === "right"
+    ){
+        direction = null;
+    }
   })
 
 const time = setInterval(()=>{
@@ -54,4 +60,4 @@ const time = setInterval(()=>{
             player.style.right = right + "px";
             break;         
     }
-}, 20)
+}, 25)
